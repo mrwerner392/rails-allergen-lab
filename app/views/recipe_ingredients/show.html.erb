@@ -1,0 +1,13 @@
+<h1><%= @recipe_ingredient.recipe.name %> - <%= @recipe_ingredient.ingredient.name %></h1>
+
+<br>
+
+<h3>Recipe: <%= link_to @recipe_ingredient.recipe.name, @recipe_ingredient.recipe %></h3>
+<h3>Ingredient: <%= link_to @recipe_ingredient.ingredient.name, @recipe_ingredient.ingredient %></h3>
+
+<br>
+
+<%= link_to "Update Recipe-Ingredient", edit_recipe_ingredient_path(@recipe_ingredient) %><br>
+<%= link_to "Return to Recipe-Ingredients", recipe_ingredients_path %><br><br>
+
+<%= button_to "Delete Recipe-Ingredient", @recipe_ingredient, method: :delete %>

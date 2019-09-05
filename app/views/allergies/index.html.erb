@@ -1,0 +1,11 @@
+<h1>Allergies</h1>
+
+<br>
+
+<% @allergies.each do |allergy| %>
+  <h3><%= link_to allergy.user.name, allergy.user %>: <%= link_to allergy.ingredient.name, allergy.ingredient %></h3>
+<% end %>
+
+<br>
+
+<%= link_to "Create New Allergy", new_allergy_path %>

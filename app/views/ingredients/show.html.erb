@@ -1,0 +1,25 @@
+<h1><%= @ingredient.name %></h1>
+
+<br>
+
+<h2>Information</h2>
+
+<ul>
+  <li>Name: <%= @ingredient.name %></li>
+  <li>Nutritional Value: <%= @ingredient.nutrition_value %></li>
+  <li>Recipes with this Ingredient:</li>
+    <ul>
+      <% @ingredient.recipes.each do |recipe| %>
+        <li><%= link_to recipe.name, recipe %></li>
+      <% end %>
+    </ul>
+</ul>
+
+
+
+<br>
+
+<%= link_to "Update Ingredient", edit_ingredient_path(@ingredient) %><br>
+<%= link_to "Return to Ingredients", ingredients_path %><br><br>
+
+<%= button_to "Delete Ingredient", @ingredient, method: :delete %>

@@ -1,0 +1,14 @@
+<h1>Edit <%= @recipe.user.name %>'s <%= @recipe.name %> Recipe</h1>
+
+<%= render 'errors' %>
+
+<%= form_for @recipe do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.hidden_field :user_id, value: @recipe.user_id %><br><br>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= @allergy.user.name %> is allergic to <%= @allergy.ingredient.name %></h1>
+
+<%= link_to "Update Allergy", edit_allergy_path(@allergy) %><br>
+<%= link_to "Return to Allergies", allergies_path %><br><br>
+
+<%= button_to "Delete Allergy", @allergy, method: :delete %>

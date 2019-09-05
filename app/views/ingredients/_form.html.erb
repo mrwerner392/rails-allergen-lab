@@ -1,0 +1,22 @@
+
+
+<% if flash[:errors] %>
+  <h3>There were some errors:</h3>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<br><br>
+
+<%= form_for @ingredient do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :nutrition_value, "Nutritional Value" %>
+  <%= f.number_field :nutrition_value %><br><br>
+
+  <%= f.submit %>
+
+<% end %>

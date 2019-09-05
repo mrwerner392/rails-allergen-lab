@@ -1,0 +1,19 @@
+<h1><%= @user.name %>'s Info Page</h1>
+
+<br>
+
+<h4>Name: <%= @user.name %></h4>
+<h4>Age: <%= @user.age %></h4>
+<h4>Recipes:</h4>
+<ul>
+  <% @user.recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<%= link_to "Update #{@user.name}'s Info", edit_user_path(@user) %><br>
+<%= link_to "Return to Users", users_path %><br><br>
+
+<%= button_to "Delete User", @user, method: :delete %>

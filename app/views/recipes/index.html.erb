@@ -1,0 +1,17 @@
+<h1>Recipes</h1>
+
+<br>
+
+<%= link_to "Sort by Number of Ingredients", recipes_path(sort: "true") %><br><br>
+
+<% @recipes.each do |recipe| %>
+  <div>
+    <h3>Recipe Name: <%= link_to recipe.name, recipe %></h3>
+    <h3>User Name: <%= link_to recipe.user.name, recipe.user %></h3>
+    <h3>Number of Ingredients: <%= recipe.ingredients.count %></h3><br>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to "Create New Recipe", new_recipe_path %>

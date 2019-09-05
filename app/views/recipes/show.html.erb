@@ -1,0 +1,17 @@
+<h1><%= @recipe.user.name %>'s Recipe for <%= @recipe.name %></h1>
+
+<br>
+
+<h2>Ingredients</h2>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %>, Nutritional Value <%= ingredient.nutrition_value %> / 10</li>
+    <% end %>
+  </ul>
+
+<br>
+
+<%= link_to "Update Recipe", edit_recipe_path(@recipe) %><br>
+<%= link_to "Back to All Recipes", recipes_path %><br><br>
+
+<%= button_to "Delete  Recipe", @recipe, method: :delete %>

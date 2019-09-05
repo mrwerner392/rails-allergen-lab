@@ -1,0 +1,22 @@
+
+
+<% if flash[:errors] %>
+  <h3>There were some errors:</h3>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<br><br>
+
+<%= form_for @recipe_ingredient do |f| %>
+
+  <%= f.label :recipe_id %>
+  <%= f.collection_select :recipe_id, @recipes, :id, :name %><br>
+
+  <%= f.label :ingredient_id %>
+  <%= f.collection_select :ingredient_id, @ingredients, :id, :name %><br><br>
+
+  <%= f.submit %>
+
+<% end %>
